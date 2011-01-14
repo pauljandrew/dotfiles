@@ -5,6 +5,9 @@ colors zenburn
 set backup
 set backupdir=~/.vim/backup
 set directory=~/.vim/tmp
+set undodir=~/.vim/tmp
+
+set undofile
 
 set noerrorbells
 set visualbell
@@ -35,6 +38,7 @@ au Filetype perl nmap <C-F6> :%!perltidy<CR>
 autocmd FileType python set omnifunc=pythoncomplete#Complete
 " Execute file being edited with <Shift> + e:
 map <buffer> <S-e> :w<CR>:!/usr/bin/env python % <CR>
+
 
 
 " map <C-]> :vsp<CR>:exec("tag ".expand("<cword>")) "
