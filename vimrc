@@ -5,10 +5,11 @@ colors zenburn
 set backup
 set backupdir=~/.vim/backup
 set directory=~/.vim/tmp
-set undodir=~/.vim/tmp
+"""set undodir=~/.vim/tmp
+  
+"""#set undofile
 
-set undofile
-
+set pastetoggle=<F3>
 set noerrorbells
 set visualbell
 set hlsearch
