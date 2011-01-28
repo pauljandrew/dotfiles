@@ -40,6 +40,9 @@ autocmd FileType python set omnifunc=pythoncomplete#Complete
 " Execute file being edited with <Shift> + e:
 map <buffer> <S-e> :w<CR>:!/usr/bin/env python % <CR>
 
+"""Windoez
+set guifont=Consolas:h9:cANSI
+au GUIEnter * simalt ~x
 
 
 " map <C-]> :vsp<CR>:exec("tag ".expand("<cword>")) "

@@ -112,6 +112,7 @@ unset TEMP
 # alias less='less -r'                          # raw control characters
 # alias whence='type -a'                        # where, of a sort
  alias grep='grep --color'                     # show differences in colour
+ alias webshare='python -m SimpleHTTPServer'
 
 # Some shortcuts for different directory listings
  alias ls='ls -hF --color=tty'                 # classify files in colour
@@ -120,11 +121,34 @@ unset TEMP
  alias ll='ls -l'                              # long list
  alias la='ls -A'                              # all but . and ..
  alias l='ls -CF'                              #
+ alias gpom='git push origin master'
+ export GIT_SSH="C:/Program Files/PuTTY/plink.exe"
 
+ alias ....="cd ../../"
 
 # Functions
 # #########
 
 # Some example functions
 function settitle() { echo -ne "\e]2;$@\a\e]1;$@\a"; }
+
+function togg() { 
+PROJ="moo"
+PROJ=$(echo $PWD | egrep -m 1 -o "(capi|napi)" | head -n1)
+
+ if [[ ${PROJ} == "capi" ]]
+ then
+     NEWPROJ="napi"
+ elif [[ ${PROJ} == "napi" ]]
+ then
+     NEWPROJ="capi"
+ else
+     echo "Not in a capi-napi dir!"
+ fi
+
+ cd $(echo $PWD | sed -e "s/${PROJ}/${NEWPROJ}/g")
+
+ }
+     
+
 
